@@ -10,15 +10,10 @@ const initialMembers = require("../fixtures/members.json");
 
 // 1. 複製 initialMembers，不直接改外部陣列
 // 作答區
-const members = [
-	{ id: 1, name: "小華", level: "VIP" },
-	{ id: 2, name: "小美", level: "normal" },
-	{ id: 3, name: "阿強", level: "VIP" },
-	{ id: 4, name: "小明", level: "normal" },
-];
+const members = initialMembers.map((member) => ({ ...member }));
 
 // 2. 下一個新增會員要使用的 id
-let nextId = 5;
+let nextId = members.length + 1;
 
 // 3. 兩個內部 helper 函式
 // 被主要邏輯拿來「重複使用」的小零件
