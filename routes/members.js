@@ -13,7 +13,7 @@ const initialMembers = require("../fixtures/members.json");
 const members = initialMembers.map((member) => ({ ...member }));
 
 // 2. 下一個新增會員要使用的 id
-let nextId = members.length + 1;
+let nextId = Math.max(members.map((m) => m.id)) + 1;
 
 // 3. 兩個內部 helper 函式
 // 被主要邏輯拿來「重複使用」的小零件
